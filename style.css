@@ -6,27 +6,64 @@
 
 html,
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Common Pixel', sans-serif;
     font-size: 16px;
 }
+
+#home {
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+   padding: 20px;
+} 
+
+.audio-container {
+    display: inline-block;
+    background-color: black;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  audio::-webkit-media-controls-play-button {
+    background-color: chartreuse;
+    color: chartreuse;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 16px;
+  }
+
+  audio::-webkit-media-controls-volume-slider {
+    width: 100px;
+  }
 
 nav {
     background-color:chartreuse;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+    height: 10vh;
 }
 
-#logo {
-    width: 3%;
-    height: auto;
-}
 
 .navleft {
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
+
+.navleft img {
+    width: 25%;
+}
+
+.navright {
+    margin-right: 30px;
+}
+
 
 ul {
     display: flex;
@@ -37,13 +74,20 @@ ul {
 
 li {
     list-style: none;
-    color: antiquewhite;
-    padding: 10px;
+ padding: 10px;
+   color: black;
+  
 }
 
 li a {
     text-decoration: none;
     color: black;
+}
+
+li a:hover {
+    color: chartreuse;
+    background-color: black;
+   padding: 10px;
 }
 
 li.dropdown {
@@ -79,14 +123,19 @@ main section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+   
 }
 
 .text {
-   color: gray;
+   color: black;
+   padding: 20px;
+   text-align: center;
+   text-transform: capitalize;
 }
 
 .text p {
    font-size: 0.8rem;
+   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .duck {
@@ -98,6 +147,26 @@ main section {
 
 #emergency {
     text-align: center;
+    background-color: white;
+    animation: backgroundChange 2s ease;
+}
+
+@keyframes backgroundChange {
+    from {
+        background-color: white;
+    }
+    to {
+        background-color: chartreuse; /
+    }
+}
+
+#emergency:hover {
+    animation: none;
+}
+
+#emergency h2 {
+    padding: 30px;
+    font-weight: bold;
 }
 
 .grid-container {
@@ -110,7 +179,7 @@ main section {
 }
 
 .grid-item {
-    border: 1px solid yellow;
+    border: 3px solid chartreuse;
  display: flex;
  justify-content: center;
  align-items: center;
@@ -126,6 +195,18 @@ position: absolute;
 top: 0;
 left: 0;
     }
+
+.grid-item:hover {
+    background-color: transparent;
+    background-image: linear-gradient(to bottom, #00ff00cc, #ffffffcc); 
+    opacity:0.8; 
+}
+
+.grid-item:active {
+    background-color: transparent;
+    background-image: linear-gradient(to bottom, #00ff00cc, #ffffffcc); 
+    opacity:0.8; 
+}
 
 footer {
     display: flex;
@@ -147,22 +228,63 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    margin-bottom: 30px;
 }
 
 #contactForm input,
-#contactForm textarea,
-#contactForm button {
+#contactForm textarea
+ {
+    width:100%;
     margin-bottom: 10px; 
+    font-family: 'Common Pixel', sans-serif;
+    color: black;
+    text-align: center;
 }
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+    background-color: chartreuse;
+    color: black;
+}
+
 
 #contact {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 10px;
+}
+
+footer h2 {
+    padding: 30px;
+}
+
+footer button {
+    background-color: chartreuse;
+    width: 100%;
+    font-family: 'Common Pixel', sans-serif;
+    padding: 10px;
+}
+
+footer button:hover {
+    background-color: black;
+    color: chartreuse;
 }
 
 .github {
-    width: 5%;
+    width: 3%;
+}
+
+#textfooter {
+    background-color: black;
+    width: 100vw;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#textfooter p {
+    margin-left: 50px;
 }
